@@ -61,7 +61,7 @@ public class DeadLock {
         t1.start();
         t2.start();
         System.out.println("Waiting for threads to complete execution. . .");
-        t2.join();
+        t1.join();
         t2.join();
         System.out.println("Done.");
     }
