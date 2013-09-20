@@ -1,3 +1,5 @@
+package dead_lock;
+
 /**
  * User: rrobles
  * Date: 20/09/13
@@ -22,9 +24,9 @@ class Counter2 implements Runnable {
     // since these variables are accessible from other threads,
     // we need to acquire a lock before processing them
     public void IncrementBallAfterRun() {
-    // since we're updating runs variable first, lock the Runs.class reference first
+        // since we're updating runs variable first, lock the Runs.class reference first
         synchronized (Runs.class) {
-        // now acquire lock on Balls.class variable before updating balls variable
+            // now acquire lock on Balls.class variable before updating balls variable
             synchronized (Balls.class) {
                 Runs.runs++;
                 Balls.balls++;
@@ -33,9 +35,9 @@ class Counter2 implements Runnable {
     }
 
     public void IncrementRunAfterBall() {
-    // since we're updating balls variable first, lock the Balls.class reference first
+        // since we're updating balls variable first, lock the Balls.class reference first
         synchronized (Balls.class) {
-        // now acquire lock on Runs.class variable before updating runs variable
+            // now acquire lock on Runs.class variable before updating runs variable
             synchronized (Runs.class) {
                 Balls.balls++;
                 Runs.runs++;
@@ -44,9 +46,9 @@ class Counter2 implements Runnable {
     }
 
     public void run() {
-    // call these two methods which acquire locks in different order
-    // depending on thread scheduling and the order of lock acquision,
-    // a deadlock may or may not arise
+        // call these two methods which acquire locks in different order
+        // depending on thread scheduling and the order of lock acquision,
+        // a deadlock may or may not arise
         IncrementBallAfterRun();
         IncrementRunAfterBall();
     }
