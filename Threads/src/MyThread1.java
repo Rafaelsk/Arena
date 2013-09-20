@@ -1,4 +1,8 @@
-
+/**
+ * User: rrobles
+ * Date: 20/09/13
+ * Time: 11:19
+ */
 class MyThread1 extends Thread {
     public void run() {
         try {

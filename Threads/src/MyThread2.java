@@ -1,3 +1,8 @@
+/**
+ * User: rrobles
+ * Date: 20/09/13
+ * Time: 11:19
+ */
 class MyThread2 implements Runnable {
     public void run() {
         System.out.println("In run method; thread name is: " +
