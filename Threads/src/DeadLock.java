@@ -1,5 +1,3 @@
-package dead_lock;
-
 /**
  * User: rrobles
  * Date: 20/09/13
