@@ -9,9 +9,9 @@ import java.util.concurrent.locks.*;
 // access an ATM machine at a given time, others wait for their turn
 class ATMMachine {
     public static void main(String []args) {
-// A person can use a machine again, and hence using a "reentrant lock"
+        // A person can use a machine again, and hence using a "reentrant lock"
         Lock machine = new ReentrantLock();
-// list of people waiting to access the machine
+        // list of people waiting to access the machine
         new Person2(machine, "Mickey");
         new Person2(machine, "Donald");
         new Person2(machine, "Tom");
