@@ -4,23 +4,25 @@
  * Time: 8:28 PM
  */
 // Circle.java
-public class Circle {
-    private Point center;
-    // Circle "contains" a Point object
+public class Circle implements Shape {
+
+    private int xPos, yPos;
     private int radius;
+
     public Circle(int x, int y, int r) {
-        center = new Point(x, y);
+        xPos = x;
+        yPos = y;
         radius = r;
-    }
-    public String toString() {
-        return "center = " + center + " and radius = " + radius;
+        System.out.println("Circle constructor");
     }
 
-    public static void main(String []s) {
-        System.out.println(new Circle(10, 10, 20));
+    @Override
+    public void draw() {
+        System.out.println("Circle draw()");
+        // draw() implementation
     }
-// other members (constructors, area method, etc) are elided ...
 }
+
 
 
 

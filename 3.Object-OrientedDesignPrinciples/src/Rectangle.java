@@ -4,22 +4,21 @@
  * Time: 8:30 PM
  */
 // Rectangle.java
-// Rectangle is a concrete class and is-a Shape; it can be rotated and hence implements Rotatable
-public class Rectangle extends Shape implements Rotatable {
+public class Rectangle implements Shape {
 
     private int length, height;
 
-    public Rectangle(int l, int h) {
-        length = l;
-        height = h;
-    }
-    public double area() {
-        return length * height;
+    public Rectangle(int length, int height) {
+        this.length = length;
+        this.height = height;
+        System.out.println("Rectangle constructor");
     }
 
     @Override
-    public void rotate(float degree) {
-        // implement rotating functionality here
+    public void draw() {
+        System.out.println("Rectangle draw()");
+        // draw() implementation
     }
 }
+
 
