@@ -26,7 +26,7 @@ class BoundedWildCardUse {
 
         for(int i = 0; i < 5; i++) {
             intList.add(i);
-            doubleList.add((double) (i * i));
+            doubleList.add((double)(i*i));
         }
 
         System.out.println("The intList is: " + intList);
